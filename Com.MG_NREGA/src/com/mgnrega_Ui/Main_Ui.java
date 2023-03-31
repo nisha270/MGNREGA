@@ -2,12 +2,13 @@ package com.mgnrega_Ui;
 
 import java.util.Scanner;
 
+import com.mgnrega.Exception.NoRecordFoundException;
 import com.mgnrega.Exception.SomethingWentWrongException;
 
 public class Main_Ui {
 
 //	step-1
-	public static void main(String[] args) throws ClassNotFoundException, SomethingWentWrongException {
+	public static void main(String[] args) throws ClassNotFoundException, SomethingWentWrongException, NoRecordFoundException {
 		System.out.println("-------------------------------------------------------------");
 		System.out.println("<==========  Welcome To MGNREGA Mini Project ================>");
 		System.out.println("-------------------------------------------------------------");
@@ -17,3 +18,4 @@ public class Main_Ui {
 
 	}
 }
+

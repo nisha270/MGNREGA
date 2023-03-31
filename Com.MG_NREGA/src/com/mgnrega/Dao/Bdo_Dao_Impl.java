@@ -73,7 +73,6 @@ public class Bdo_Dao_Impl implements Bdo_Dao {
 			throw new SomethingWentWrongException("Not able to find Records!");
 		}
 		return list;
-
 	}
 
 }

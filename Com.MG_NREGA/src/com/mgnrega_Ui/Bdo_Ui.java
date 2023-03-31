@@ -1,12 +1,14 @@
 package com.mgnrega_Ui;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 
 import com.mgnrega.Dao.Bdo_Dao;
 import com.mgnrega.Dao.Bdo_Dao_Impl;
 import com.mgnrega.Dto.CProject_Dto;
 import com.mgnrega.Dto.cprojectDto_Impl;
+import com.mgnrega.Exception.NoRecordFoundException;
 import com.mgnrega.Exception.SomethingWentWrongException;
 
 public class Bdo_Ui {
@@ -17,9 +19,9 @@ public class Bdo_Ui {
 		System.out.println("Enter Your Project Name : ");
 		String pname = sc.next();
 		System.out.println("Enter Start Date formate(yyyy-mm-dd) : ");
-		LocalDate sdate = LocalDate.parse(sc.nextLine());
+		LocalDate sdate = LocalDate.parse(sc.next());
 		System.out.println("Enter End Date formate(yyyy-mm-dd) : ");
-		LocalDate edate = LocalDate.parse(sc.nextLine());
+		LocalDate edate = LocalDate.parse(sc.next());
 		System.out.println("Enter Numbers of workers: ");
 		int num_workers = sc.nextInt();
 		System.out.println("Enter per_day_wages");
@@ -36,8 +38,21 @@ public class Bdo_Ui {
 
 	}
 
-	public static void AllProjects_Ui() throws SomethingWentWrongException {
-		
+	public static void AllProjects_Ui() throws SomethingWentWrongException, NoRecordFoundException {
+		Bdo_Dao bd = new Bdo_Dao_Impl();
+		try {
+			List<CProject_Dto> p = bd.allProject();
+			p.forEach(s -> {
+				System.out.println("==========================================");
+				System.out.println("Project Name : " + s.getProjectName() + " start Date : " + s.getStartDate()
+						+ " end Date : " + s.getEndDate() + " Numbers Of Workers : " + s.getNumberOfWorkers()
+						+ " Par day wages : " + s.getPerDayWages());
+				System.out.println("==========================================");
+			});
+		} catch (SomethingWentWrongException e) {
+			throw new SomethingWentWrongException("Something Went Wrong!");
+		}
+
 	}
 
 }

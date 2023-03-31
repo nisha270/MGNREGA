@@ -2,12 +2,13 @@ package com.mgnrega_Ui;
 
 import java.util.Scanner;
 
+import com.mgnrega.Exception.NoRecordFoundException;
 import com.mgnrega.Exception.SomethingWentWrongException;
 
 public class users_Login_Ui {
 
 //	Bdo Login
-	public static void BdoLogin() throws ClassNotFoundException, SomethingWentWrongException {
+	public static void BdoLogin() throws ClassNotFoundException, SomethingWentWrongException, NoRecordFoundException {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Bdo User Name");
 		String username = sc.next();
@@ -26,7 +27,7 @@ public class users_Login_Ui {
 	}
 
 //	Bdo Details
-	public static void bdo() throws ClassNotFoundException, SomethingWentWrongException {
+	public static void bdo() throws ClassNotFoundException, SomethingWentWrongException, NoRecordFoundException {
 
 		Scanner sc = new Scanner(System.in);
 		int choice = 0;
@@ -104,7 +105,7 @@ public class users_Login_Ui {
 		} while (choice != 0);
 	}
 
-	public static void SelectUser() throws ClassNotFoundException, SomethingWentWrongException {
+	public static void SelectUser() throws ClassNotFoundException, SomethingWentWrongException, NoRecordFoundException {
 		Scanner sc = new Scanner(System.in);
 
 		int choice = 0;
