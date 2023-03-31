@@ -2,6 +2,7 @@ package com.mgnrega_Ui;
 
 import java.util.Scanner;
 
+import com.mgnrega.Dto.gpm_project_Dto;
 import com.mgnrega.Exception.NoRecordFoundException;
 import com.mgnrega.Exception.SomethingWentWrongException;
 
@@ -45,12 +46,12 @@ public class users_Login_Ui {
 				Bdo_Ui.AllProjects_Ui();
 				break;
 			case 3:
-				// RegisterGpn();
+				Bdo_Ui.AddGpm_Ui();
 				break;
 			case 4:
-				//
+				Bdo_Ui.All_Gpm_Ui();
 			case 5:
-				//
+				//Allocate a project to a GPM
 				break;
 			case 6:
 				//
