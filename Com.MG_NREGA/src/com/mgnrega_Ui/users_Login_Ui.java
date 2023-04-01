@@ -2,6 +2,10 @@ package com.mgnrega_Ui;
 
 import java.util.Scanner;
 
+import com.mgnrega.Dao.Bdo_Dao;
+import com.mgnrega.Dao.Bdo_Dao_Impl;
+import com.mgnrega.Dto.Users_Dto;
+import com.mgnrega.Dto.Users_Dto_impl;
 import com.mgnrega.Dto.gpm_project_Impl_Dto;
 import com.mgnrega.Exception.NoRecordFoundException;
 import com.mgnrega.Exception.SomethingWentWrongException;
@@ -15,17 +19,25 @@ public class users_Login_Ui {
 		String username = sc.next();
 		System.out.println("Enter Bdo Password");
 		String password = sc.next();
-
-		if (username.equals("nisha@123") && password.equals("nisha@123")) {
+		
+		Users_Dto ud=new Users_Dto_impl();
+		Bdo_Dao bd = new Bdo_Dao_Impl();
+		
+		ud.setPassword(password);
+		ud.setPassword(password);
+		ud.setUsertype("BDO");
+		try {
+			bd.Login_Bdo(ud);
 			System.out.println("***************BDO Login Successfully***************");
 			System.out.println();
 			users_Login_Ui.bdo();
-		}
-
-		else {
+		
+		} catch (Exception e) {
+			System.out.println(e);
 			System.out.println("Username or Password is wrong, Try again...");
 			System.out.println();
 			users_Login_Ui.SelectUser();
+		
 		}
 	}
 
@@ -94,24 +106,26 @@ public class users_Login_Ui {
 			choice = sc.nextInt();
 			switch (choice) {
 			case 1:
-				// createProject();
+				// Add worker with details aadhaar_number, name, dob, gender, panchayat name,
+//				district, state
 				break;
 			case 2:
-				// GetAllProject();
+				//View the details of workers using aadhaar_number
 				break;
 			case 3:
-				// RegisterGpn();
+				//Assign workers to Project from list of project assigned to this GMP.
 				break;
 			case 4:
-				//
+				//View worker name & the total number of days a worker worked on a project
+				break;
 			case 5:
-				//
+				//View worker name & total wages paid to him.
 				break;
 			case 6:
-				//
+				//delete a worker
 				break;
 			case 0:
-				//
+				//Logout his account
 				break;
 			default:
 				System.out.println();
@@ -122,6 +136,8 @@ public class users_Login_Ui {
 		} while (choice != 0);
 	}
 
+	
+	//select bdo | Gpm  
 	public static void SelectUser() throws ClassNotFoundException, SomethingWentWrongException, NoRecordFoundException {
 		Scanner sc = new Scanner(System.in);
 
@@ -154,6 +170,7 @@ public class users_Login_Ui {
 
 			} while (choice != 0);
 		} catch (Exception e) {
+			System.out.println(e);
 			System.out.println();
 			System.out.println("Enter a valid Number");
 			System.out.println();

@@ -12,6 +12,7 @@ import java.util.List;
 import com.mgnrega.Dto.CProject_Dto;
 import com.mgnrega.Dto.Gpm_Dto;
 import com.mgnrega.Dto.Gpm_Dto_impl;
+import com.mgnrega.Dto.Users_Dto;
 import com.mgnrega.Dto.cprojectDto_Impl;
 import com.mgnrega.Dto.gpm_project_dto;
 import com.mgnrega.Exception.NoRecordFoundException;
@@ -20,6 +21,41 @@ import com.mgnrega.Utility.dbUtil;
 import com.mgnrega_Ui.Bdo_Ui;
 
 public class Bdo_Dao_Impl implements Bdo_Dao {
+	
+//	Login BDO
+	public void Login_Bdo(Users_Dto ud) throws SomethingWentWrongException {
+		
+		Connection conn=null;
+		try {
+			conn= dbUtil.getConnection();
+			String query="Select * from users where username=? And password=? and user_type=? AND is_delete = 0";
+			PreparedStatement ps= conn.prepareStatement(query);
+			ps.setString(1, ud.getUsername());
+			ps.setString(2, ud.getPassword());
+			ps.setString(3, ud.getUsertype());
+			
+			ResultSet rs= ps.executeQuery();
+			
+			if(rs.isBeforeFirst()&&rs.getRow()==0) {
+				System.out.println("User Name And Password are Invalid");
+			}
+			else {
+				rs.next();
+				System.out.println();
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+			throw new SomethingWentWrongException("Error occurred while logging in. Please try again later.");
+		}
+		finally {
+			try {
+				dbUtil.cloceConnection(conn);
+			}catch(SQLException ex) {
+				
+			}
+		}
+	}
+	
 //	create Project
 	public void CreateProject(CProject_Dto cp) throws SomethingWentWrongException, ClassNotFoundException {
 
