@@ -10,6 +10,8 @@ import com.mgnrega.Dto.CProject_Dto;
 import com.mgnrega.Dto.Gpm_Dto;
 import com.mgnrega.Dto.Gpm_Dto_impl;
 import com.mgnrega.Dto.cprojectDto_Impl;
+import com.mgnrega.Dto.gpm_project_Impl_Dto;
+import com.mgnrega.Dto.gpm_project_dto;
 import com.mgnrega.Exception.NoRecordFoundException;
 import com.mgnrega.Exception.SomethingWentWrongException;
 
@@ -119,9 +121,52 @@ public class Bdo_Ui {
 						"<=============================================================================================================================>");
 			});
 		} catch (SomethingWentWrongException e) {
+			System.out.println(e);
 			throw new SomethingWentWrongException("Something Went Wrong!");
 		}
 
 	}
 
+//	Allocate a project to a GPM.
+	public static void AllocateTheProject_Ui()throws SomethingWentWrongException{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Gpm Id : ");
+		int g_id=sc.nextInt();
+		
+		System.out.println("Enter Project Id : ");
+		int p_id=sc.nextInt();
+		
+		gpm_project_dto gp= new gpm_project_Impl_Dto(g_id,p_id);
+		Bdo_Dao bd=new Bdo_Dao_Impl();
+		
+		try {
+			bd.AllocateTheProject(gp);
+			System.out.println("Allocated The Project");
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

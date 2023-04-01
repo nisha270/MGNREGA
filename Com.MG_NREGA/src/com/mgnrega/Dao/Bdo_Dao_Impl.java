@@ -13,6 +13,7 @@ import com.mgnrega.Dto.CProject_Dto;
 import com.mgnrega.Dto.Gpm_Dto;
 import com.mgnrega.Dto.Gpm_Dto_impl;
 import com.mgnrega.Dto.cprojectDto_Impl;
+import com.mgnrega.Dto.gpm_project_dto;
 import com.mgnrega.Exception.NoRecordFoundException;
 import com.mgnrega.Exception.SomethingWentWrongException;
 import com.mgnrega.Utility.dbUtil;
@@ -149,5 +150,33 @@ public class Bdo_Dao_Impl implements Bdo_Dao {
 		return list;
 	}
 
-
+//	Allocate a project to a GPM.
+	public void AllocateTheProject(gpm_project_dto gp) throws SomethingWentWrongException{
+		Connection conn = null;
+		try {
+			conn=dbUtil.getConnection();
+			String query="insert into gpm_project(gpm_id,project_id) values(?,?)";
+			PreparedStatement ps=conn.prepareStatement(query);
+			ps.setInt(1, gp.getGpmId());
+			ps.setInt(2, gp.getProjectId());
+			
+			int rs=ps.executeUpdate();
+			if(rs==0) {
+				System.out.println("Not record Found");
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e);
+			System.out.println("somethinf went wrong");
+		}
+		finally {
+			try {
+				dbUtil.cloceConnection(conn);
+			} catch (SQLException ex) {
+				System.out.println(ex);
+				throw new SomethingWentWrongException("Not able to Create Project");
+			}
+		}
+		
+	}
 }
