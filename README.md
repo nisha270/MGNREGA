@@ -56,12 +56,11 @@ MNREGA(The Mahatma Gandhi National Rural Employment Guarantee Act ) is a scheme 
 
 <br>
 
-## Run Locally
+## Link For Repository to clone & DataBase for import
 
-Go to the Project Directory
+- [ Repository ](https://github.com/nisha270/subsequent-cent-9512) 
 
-Open the E-Commerce Folder with STS
-   
+- [ Database ](https://github.com/Sakshi0704/cheerful-notebook-6741/blob/main/myproject.sql/)
 
 ## ER Diagram
     
