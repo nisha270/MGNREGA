@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import com.mgnrega.Dao.Bdo_Dao;
 import com.mgnrega.Dao.Bdo_Dao_Impl;
+import com.mgnrega.Dao.Gpm_Dao;
+import com.mgnrega.Dao.Gpm_Dao_Impl;
 import com.mgnrega.Dto.Users_Dto;
 import com.mgnrega.Dto.Users_Dto_impl;
 import com.mgnrega.Dto.gpm_project_Impl_Dto;
@@ -91,14 +93,43 @@ public class users_Login_Ui {
 		}
 	}
 
+//	Gpm Login
+	public static void gpm() throws ClassNotFoundException, SomethingWentWrongException, NoRecordFoundException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter GPM User Name");
+		String username = sc.next();
+		System.out.println("Enter Your Password");
+		String password = sc.next();
+		
+		Users_Dto ud=new Users_Dto_impl();
+		Gpm_Dao bd = new Gpm_Dao_Impl();
+		
+		ud.setPassword(password);
+		ud.setPassword(password);
+		ud.setUsertype("GPM");
+		try {
+			bd.Login_Gpm(ud);
+			System.out.println("***************GPM Login Successfully***************");
+			System.out.println();
+			users_Login_Ui.Gpn();
+		
+		} catch (Exception e) {
+			System.out.println(e);
+			System.out.println("Username or Password is wrong, Try again...");
+			System.out.println();
+			users_Login_Ui.SelectUser();
+		
+		}
+	}
 //	 GPM Details
-	public static void GpnLogin() {
+	public static void Gpn() throws ClassNotFoundException, SomethingWentWrongException, NoRecordFoundException {
 		Scanner sc = new Scanner(System.in);
 		int choice = 0;
 		do {
-			System.out.println("1. GPN Login\r\n" + "2. Resister Worker\r\n"
-					+ "3. See List of Employee working on that Project on Name\\r\\n" + "4. View all Gpm\r\n"
-					+ "4. Logout from BDO\r\n");
+			System.out.println("1.Resister Worker Details\r\n" + "2. View Details of Worker\r\n"
+					+ "3. View worker name & the total number of days a worker worked on a project\r\n" +
+					"4. View worker name & total wages paid to him\r\n"
+					+ "5. Logout from BDO\r\n");
 			System.out.println();
 			System.out.println("Choose an Option number");
 			System.out.println();
@@ -106,20 +137,21 @@ public class users_Login_Ui {
 			choice = sc.nextInt();
 			switch (choice) {
 			case 1:
-				// Add worker with details aadhaar_number, name, dob, gender, panchayat name,
-//				district, state
+				System.out.println(1);
+				Gpn_Ui.AddWorker_Ui();
 				break;
 			case 2:
-				//View the details of workers using aadhaar_number
+				Gpn_Ui.All_Worker_Ui();
 				break;
 			case 3:
-				//Assign workers to Project from list of project assigned to this GMP.
+				Gpn_Ui.getWorkerProject_Ui(); //View worker name & the total number of days a worker worked on a project
 				break;
 			case 4:
-				//View worker name & the total number of days a worker worked on a project
+				Gpn_Ui.getWorkerwages_Ui(); //View worker name & total wages paid to him.
+				
 				break;
 			case 5:
-				//View worker name & total wages paid to him.
+				
 				break;
 			case 6:
 				//delete a worker
@@ -130,7 +162,7 @@ public class users_Login_Ui {
 			default:
 				System.out.println();
 				System.out.println("Invalid Input, try again");
-				users_Login_Ui.GpnLogin();
+				users_Login_Ui.Gpn();
 				System.out.println();
 			}
 		} while (choice != 0);
@@ -147,13 +179,14 @@ public class users_Login_Ui {
 				System.out.println("Choose an Option....");
 				System.out.println("1. BDO (Block Development Officer) Login");
 				System.out.println("2. Gram Panchayet Member Login");
+				System.out.println("3. Logout From This Page");
 				choice = sc.nextInt();
 				switch (choice) {
 				case 1:
 					BdoLogin();
 					break;
 				case 2:
-					GpnLogin();
+					gpm();
 					break;
 				case 3:
 					System.out.println();
