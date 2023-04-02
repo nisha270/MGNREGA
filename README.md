@@ -18,12 +18,14 @@ MNREGA(The Mahatma Gandhi National Rural Employment Guarantee Act ) is a scheme 
 
 ## How To Run The Code  
 
+![WhatsApp Image 2023-04-02 at 23 25 04](https://user-images.githubusercontent.com/112757338/229370463-b9a1c7f0-1765-4467-b436-08e6c1aa3522.jpg)
 
-<img align="center" src="https://user-images.githubusercontent.com/100846744/193421061-eb252b3b-d59f-43d4-8d67-1e1d486fb644.png" width="100%"/>
-   
+![WhatsApp Image 2023-04-02 at 23 25 04](https://user-images.githubusercontent.com/112757338/229370538-27e3c3df-9b12-4b61-94f9-b86ebbab579b.jpg)
+
+![WhatsApp Image 2023-04-02 at 23 25 41](https://user-images.githubusercontent.com/112757338/229370501-4828646d-2a22-46c3-b662-1ffe072e432c.jpg)
+
 ## Key Features
 
-<h4>Admin<h4>
 <ul>
    <h1>BDO Login</h1>
     <li>Create a project</li>
@@ -36,7 +38,7 @@ MNREGA(The Mahatma Gandhi National Rural Employment Guarantee Act ) is a scheme 
        <h1>GPM Login</h1>
     <li>Resister Worker Details</li>
     <li>View Details of Worker</li>
-    <li>View </li>
+    <li>View  </li>
     <li>Allocate a project to a GPM</li>
     <li>Logout from BDO</li>
 </ul>
