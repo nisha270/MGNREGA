@@ -62,36 +62,11 @@ MNREGA(The Mahatma Gandhi National Rural Employment Guarantee Act ) is a scheme 
 - Github
 
 <br>
-    
-## Setting & Installation 
-
-Install the Spring Tools Suite 
-bash
-https://spring.io/tools
-
-
-Install MySQL Community Server
-
-bash
-https://dev.mysql.com/downloads/mysql/
-
-
-Clone the Repository
-
-bash
-git clone https://github.com/Im-vishalanand/secretive-form-5947.git
-
-
-Open MySQL Server
-bash
-Create a New Database in MySQL: "project" 
-
 
 ## Run Locally
 
 Go to the Project Directory
 
-bas
 Open the E-Commerce Folder with STS
    
 
