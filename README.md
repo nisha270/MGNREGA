@@ -18,16 +18,15 @@ MNREGA(The Mahatma Gandhi National Rural Employment Guarantee Act ) is a scheme 
 
 ## How To Run The Code  
 
-![WhatsApp Image 2023-04-02 at 23 25 04](https://user-images.githubusercontent.com/112757338/229370463-b9a1c7f0-1765-4467-b436-08e6c1aa3522.jpg)
+![WhatsApp Image 2023-04-02 at 23 42 31](https://user-images.githubusercontent.com/112757338/229371136-ca61d4c0-55db-47ba-a967-c7c4f3af54b5.jpg)
 
-![WhatsApp Image 2023-04-02 at 23 25 04](https://user-images.githubusercontent.com/112757338/229370538-27e3c3df-9b12-4b61-94f9-b86ebbab579b.jpg)
-
-![WhatsApp Image 2023-04-02 at 23 25 41](https://user-images.githubusercontent.com/112757338/229370501-4828646d-2a22-46c3-b662-1ffe072e432c.jpg)
+![WhatsApp Image 2023-04-02 at 23 42 36](https://user-images.githubusercontent.com/112757338/229371139-6c41013b-7447-47b0-a005-a8be1c510119.jpg)
+![WhatsApp Image 2023-04-02 at 23 42 57](https://user-images.githubusercontent.com/112757338/229371142-eb916eea-3abd-4e6b-a6a8-57b5141c4bce.jpg)
 
 ## Key Features
 
 <ul>
-   <h1>BDO Login</h1>
+   <h1>BDO </h1>
     <li>Create a project</li>
     <li>Create New Gpm</li>
     <li>View all Gpm</li>
@@ -35,7 +34,8 @@ MNREGA(The Mahatma Gandhi National Rural Employment Guarantee Act ) is a scheme 
     <li>Logout from BDO</li>
    </ul>
     <ul>
-       <h1>GPM Login</h1>
+       <h1>GPM </h1>
+   
     <li>Resister Worker Details</li>
     <li>View Details of Worker</li>
     <li>View  </li>
