@@ -2,7 +2,6 @@
 <img align="center" src="https://user-images.githubusercontent.com/100846744/193420416-e561c692-30cf-4517-b9c9-a88f35088b86.png" width="100%"/>
 
 
-
 # MGNREGA (Mini_Project_Console_Base)
 
 MNREGA(The Mahatma Gandhi National Rural Employment Guarantee Act ) is a scheme by which unskilled people of rural India are guaranteed to have 100 days of paid work. Main objective of this project is to manage employments offered through this scheme.There are two users of this system !
@@ -32,7 +31,7 @@ MNREGA(The Mahatma Gandhi National Rural Employment Guarantee Act ) is a scheme 
     <li>View all Gpm</li>
     <li>Allocate a project to a GPM</li>
     <li>Logout from BDO</li>
-   
+   </ul>
     <ul>
        <h1>GPM Login</h1>
     <li>Resister Worker Details</li>
@@ -40,7 +39,7 @@ MNREGA(The Mahatma Gandhi National Rural Employment Guarantee Act ) is a scheme 
     <li>View </li>
     <li>Allocate a project to a GPM</li>
     <li>Logout from BDO</li>
-</ol>
+</ul>
 <br>
     
 ## Technology used
@@ -66,7 +65,7 @@ Open the E-Commerce Folder with STS
 
 ## ER Diagram
     
-![Untitled (5)](https://user-images.githubusercontent.com/108060013/223524728-8f71f475-d530-4acd-829c-79a902cba656.png)
+![er_diagram](https://user-images.githubusercontent.com/112757338/229367206-414bfd97-9e0f-4065-b626-fba1fd71d8cf.png)
 
 <br>
         
