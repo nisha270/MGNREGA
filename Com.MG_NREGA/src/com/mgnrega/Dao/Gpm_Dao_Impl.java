@@ -44,7 +44,7 @@ public class Gpm_Dao_Impl implements Gpm_Dao {
 				System.out.println();
 			}
 		} catch (Exception e) {
-			System.out.println(e);
+//			System.out.println(e);
 			throw new SomethingWentWrongException("Error occurred while logging in. Please try again later.");
 		} finally {
 			try {
@@ -74,7 +74,7 @@ public class Gpm_Dao_Impl implements Gpm_Dao {
 			ps.executeUpdate();
 
 		} catch (SQLException e) {
-			System.out.println(e);
+//			System.out.println(e);
 			throw new SomethingWentWrongException("Not able to Add GPM");
 		} finally {
 			try {

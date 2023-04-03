@@ -16,9 +16,5 @@ public interface Bdo_Dao {
 	public void addGpm(Gpm_Dto gd) throws SomethingWentWrongException, ClassNotFoundException;
 	public List<Gpm_Dto> allgpm() throws SomethingWentWrongException, NoRecordFoundException;
 	public void AllocateTheProject(gpm_project_dto gp) throws SomethingWentWrongException;
-	
-	
-	
-	
-	
+
 }

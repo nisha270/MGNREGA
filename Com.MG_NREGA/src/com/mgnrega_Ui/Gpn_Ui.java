@@ -16,13 +16,14 @@ import com.mgnrega.Dto.getWorkerProject_Dto;
 import com.mgnrega.Dto.worker_project_Dto;
 import com.mgnrega.Exception.NoRecordFoundException;
 import com.mgnrega.Exception.SomethingWentWrongException;
+import com.mgnrega.custom.Console_Color;
 
 public class Gpn_Ui {
 	
 //	add worker
 	public static void AddWorker_Ui() throws SomethingWentWrongException, ClassNotFoundException {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter Worker's Adhar Number : ");
+		System.out.println(Console_Color.LIGHT_BLUE+"Enter Worker's Adhar Number : ");
 		String aadhar = sc.next();
 
 		System.out.println("Enter Worker's Name : ");
@@ -42,17 +43,17 @@ public class Gpn_Ui {
 		System.out.println("Enter GPM's Distric Name : ");
 		String dname = sc.next();
 
-		System.out.println("Enter GPM's State Name : ");
+		System.out.println("Enter GPM's State Name : "+Console_Color.RESET);
 		String sname = sc.next();
 
 		Worker_Dto gd = new Worker_Dto_Impl(aadhar, name, dob, gender, pname, dname, sname);
 		Gpm_Dao bd = new Gpm_Dao_Impl();
 		try {
 			bd.AddWorkers(gd);
-			System.out.println("Successfully add Gpm's Details");
+			System.out.println(Console_Color.LIGHT_GREEN+"Successfully add Gpm's Details"+Console_Color.RESET);
 		} catch (Exception e) {
-//			throw new SomethingWentWrongException("Unable to Add Details..");
-			System.out.println(e);
+			throw new SomethingWentWrongException("Unable to Add Details..");
+//			System.out.println(e);
 		}
 		System.out.println();
 	}
@@ -72,16 +73,16 @@ public class Gpn_Ui {
 		try {
 			  List<Worker_Dto> p = bd.ViewWorker(adhar);
 		        p.forEach(s -> {
-		            System.out.println(
+		            System.out.println(Console_Color.CYAN+
 		                    "<===========================================================================================================================================================>");
 		            System.out.println("    Aadhar Number : " + s.getWaadar() + " |  Name : " + s.getWname() + " |  DOB : "
 		                    + s.getWdob() + " |  Gender : " + s.getWgender() + " |  PANCHAYAT_NAME : " + s.getPname()
 		                    + " |  Distric : " + s.getDistric() + " |  State : " + s.getState());
 		            System.out.println(
-		                    "<============================================================================================================================================================>");
+		                    "<============================================================================================================================================================>"+Console_Color.RESET);
 		        });
 		} catch (SomethingWentWrongException e) {
-			System.out.println(e);
+//			System.out.println(e);
 			throw new SomethingWentWrongException("Something Went Wrong!");
 		}
 
@@ -93,14 +94,14 @@ public class Gpn_Ui {
 		try {
 			List<getWorkerProject_Dto>p=bd.getWorkerProjects();
 			p.forEach(s -> {
-				System.out.println(
+				System.out.println(Console_Color.CYAN+
 						"<=====================================================================>");
 				System.out.println("  |  Worker Name : " + s.getName() + " | Total Days : " + s.getDays()+" | ");
 				System.out.println(
-						"<=====================================================================>");
+						"<=====================================================================>"+Console_Color.RESET);
 			});
 		} catch (SomethingWentWrongException e) {
-			System.out.println(e);
+//			System.out.println(e);
 			throw new SomethingWentWrongException("Something Went Wrong!");
 		}
 	}
@@ -111,14 +112,14 @@ public class Gpn_Ui {
 		try {
 			List<getWorkerProject_Dto>p=bd.getWorkerProjects();
 			p.forEach(s -> {
-				System.out.println(
+				System.out.println(Console_Color.CYAN+
 						"<=====================================================================>");
 				System.out.println("  |  Worker Name : " + s.getName() + " | Total Days : " + s.getWages()+" | ");
 				System.out.println(
-						"<=====================================================================>");
+						"<=====================================================================>"+Console_Color.RESET);
 			});
 		} catch (SomethingWentWrongException e) {
-			System.out.println(e);
+//			System.out.println(e);
 			throw new SomethingWentWrongException("Something Went Wrong!");
 		}
 	}

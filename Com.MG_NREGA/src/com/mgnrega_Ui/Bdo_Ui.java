@@ -14,13 +14,14 @@ import com.mgnrega.Dto.gpm_project_Impl_Dto;
 import com.mgnrega.Dto.gpm_project_dto;
 import com.mgnrega.Exception.NoRecordFoundException;
 import com.mgnrega.Exception.SomethingWentWrongException;
+import com.mgnrega.custom.Console_Color;
 
 public class Bdo_Ui {
 
 //	Create a project with details projectName, startDate, endDate, noOfWorkers,per_day_wages
 	public static void CreateProject_Ui() throws SomethingWentWrongException, ClassNotFoundException {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter Your Project Name : ");
+		System.out.println(Console_Color.CYAN+"Enter Your Project Name : ");
 		String pname = sc.next();
 		sc.nextLine();
 
@@ -33,7 +34,7 @@ public class Bdo_Ui {
 		System.out.println("Enter Numbers of workers: ");
 		int num_workers = sc.nextInt();
 
-		System.out.println("Enter per_day_wages");
+		System.out.println("Enter per_day_wages"+Console_Color.RESET);
 		double per_day_wages = sc.nextDouble();
 
 		CProject_Dto cpo = new cprojectDto_Impl(pname, sdate, edate, num_workers, per_day_wages);
@@ -53,13 +54,13 @@ public class Bdo_Ui {
 		try {
 			List<CProject_Dto> p = bd.allProject();
 			p.forEach(s -> {
-				System.out.println(
+				System.out.println(Console_Color.ORANGE+
 						"<============================================================================================================================>");
 				System.out.println("    Project Name : " + s.getProjectName() + " start Date : " + s.getStartDate()
 						+ " end Date : " + s.getEndDate() + " Numbers Of Workers : " + s.getNumberOfWorkers()
 						+ " Par day wages : " + s.getPerDayWages());
 				System.out.println(
-						"<=============================================================================================================================>");
+						"<=============================================================================================================================>"+Console_Color.RESET);
 			});
 		} catch (SomethingWentWrongException e) {
 			throw new SomethingWentWrongException("Something Went Wrong!");
@@ -100,8 +101,8 @@ public class Bdo_Ui {
 			bd.addGpm(gd);
 			System.out.println("Successfully add Gpm's Details");
 		} catch (Exception e) {
-//			throw new SomethingWentWrongException("Unable to Add Details..");
-			System.out.println(e);
+			throw new SomethingWentWrongException("Unable to Add Details..");
+//			System.out.println(e);
 		}
 		System.out.println();
 	}
@@ -112,16 +113,16 @@ public class Bdo_Ui {
 		try {
 			List<Gpm_Dto>p=bd.allgpm();
 			p.forEach(s -> {
-				System.out.println(
+				System.out.println(Console_Color.ORANGE+
 						"<============================================================================================================================>");
 				System.out.println("    Aadhar Number : " + s.getAadhar_number() + " Name : " + s.getName() + " DOB : "
 						+ s.getDob() + " Gender : " + s.getGender() + " PANCHAYAT_NAME : " + s.getPanchyatName()
 						+ " Distric : " + s.getDistric() + " State : " + s.getState());
 				System.out.println(
-						"<=============================================================================================================================>");
+						"<=============================================================================================================================>"+Console_Color.RESET);
 			});
 		} catch (SomethingWentWrongException e) {
-			System.out.println(e);
+//			System.out.println(e);
 			throw new SomethingWentWrongException("Something Went Wrong!");
 		}
 

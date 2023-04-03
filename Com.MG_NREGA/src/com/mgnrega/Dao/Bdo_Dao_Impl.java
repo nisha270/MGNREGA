@@ -36,15 +36,13 @@ public class Bdo_Dao_Impl implements Bdo_Dao {
 			
 			ResultSet rs= ps.executeQuery();
 			
-			if(rs.isBeforeFirst()&&rs.getRow()==0) {
-				System.out.println("User Name And Password are Invalid");
-			}
-			else {
-				rs.next();
+			if(!rs.next()) {
+				System.out.println("*=*=*=*=User Name And Password are Invalid=*=*=*=*");
 				System.out.println();
 			}
+			
 		} catch (Exception e) {
-			System.out.println(e);
+//			System.out.println(e);
 			throw new SomethingWentWrongException("Error occurred while logging in. Please try again later.");
 		}
 		finally {
@@ -135,7 +133,7 @@ public class Bdo_Dao_Impl implements Bdo_Dao {
 			ps.executeUpdate();
 
 		} catch (SQLException e) {
-			System.out.println(e);
+//			System.out.println(e);
 			throw new SomethingWentWrongException("Not able to Create Project");
 		} finally {
 			try {
@@ -143,7 +141,7 @@ public class Bdo_Dao_Impl implements Bdo_Dao {
 					ps.close();
 				dbUtil.cloceConnection(conn);
 			} catch (SQLException ex) {
-				System.out.println(ex);
+//				System.out.println(ex);
 				throw new SomethingWentWrongException("Not able to Create Project");
 			}
 		}
