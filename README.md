@@ -33,9 +33,10 @@ MNREGA(The Mahatma Gandhi National Rural Employment Guarantee Act ) is a scheme 
     <li>Allocate a project to a GPM</li>
     <li>Logout from BDO</li>
    </ul>
-    <ul>
-       <h1>GPM </h1>
-   
+    
+      
+   <ul>
+    <h1>GPM </h1>
     <li>Resister Worker Details</li>
     <li>View Details of Worker</li>
     <li>View  </li>
