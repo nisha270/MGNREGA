@@ -53,7 +53,7 @@ public class Gpn_Ui {
 			System.out.println(Console_Color.LIGHT_GREEN+"Successfully add Gpm's Details"+Console_Color.RESET);
 		} catch (Exception e) {
 			throw new SomethingWentWrongException("Unable to Add Details..");
-//			System.out.println(e);
+
 		}
 		System.out.println();
 	}

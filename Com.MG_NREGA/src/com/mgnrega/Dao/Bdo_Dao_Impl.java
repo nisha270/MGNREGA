@@ -155,6 +155,7 @@ public class Bdo_Dao_Impl implements Bdo_Dao {
 			conn = dbUtil.getConnection();
 			String query = "SELECT AADHAR_NUMBER,NAME,DOB,GENDER,PANCHAYAT_NAME,DISTRIC,STATE FROM gpm";
 
+			
 			PreparedStatement ps = conn.prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
 
@@ -207,7 +208,6 @@ public class Bdo_Dao_Impl implements Bdo_Dao {
 			try {
 				dbUtil.cloceConnection(conn);
 			} catch (SQLException ex) {
-				System.out.println(ex);
 				throw new SomethingWentWrongException("Not able to Create Project");
 			}
 		}
