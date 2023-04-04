@@ -9,16 +9,13 @@ import com.mgnrega.custom.Console_Color;
 
 public class Main_Ui {
 
-//	step-1  +Console_Color.BROWN_BACKGROUND
+//main
 	public static void main(String[] args) throws ClassNotFoundException, SomethingWentWrongException, NoRecordFoundException {
 		System.out.println (Console_Color.GREEN_BOLD_BRIGHT+ "-------------------------------------------------------------");
 		System.out.println("<==========  Welcome To MGNREGA Mini Project ================>");
 		System.out.println("-------------------------------------------------------------"+Console_Color.RESET);
 		System.out.println();
-		
    users_Login_Ui.SelectUser();
-   System.out.println();
-
 	}
 }
 
